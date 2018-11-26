@@ -23,13 +23,13 @@ Affine Cipher is a type of monoalphabetic substitution cipher.
 <center> **E(A) = (a * A + b) % N.** </center>
 <center> **D(A) = a^-1 (A - b) % N** </center>
 
-**"a"** is relatively prime number of N. **"b"** is integer number between 0 and N.
+** "a" ** is relatively prime number of N. ** "b" ** is integer number between 0 and N.
 Because obfuscating system was implemented with c++ metaprogramming, a string literal cannot be easily found in decompiled source code.
 
 
 
-#### Before Obfuacating
-**Compile options : -O1 -g**
+### Before Obfuacating
+**Compile options : -O3 -march=native -fPIC -g**
 
 ```
 #include <iostream>
@@ -59,7 +59,7 @@ End of assembler dump.
 >> 0x405064 <_Jv_RegisterClasses+4214884>: "snowapril"
 ```
 
-#### After Obfuscating
+### After Obfuscating
 **Compile options : -O3 -march=native -fPIC -g**
 
 ``` assembly
