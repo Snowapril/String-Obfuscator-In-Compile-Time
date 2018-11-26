@@ -23,8 +23,8 @@ Affine Cipher is a type of monoalphabetic substitution cipher. <br/>
 **E(A) = (a * A + b) % N.** <br/>
 **D(A) = a^-1 (A - b) % N** <br/>
 
-**a** is relatively prime number of N. **b** is integer number between 0 and N.
-Because obfuscating system was implemented with c++ metaprogramming, a string literal cannot be easily found in decompiled source code.
+**a** is relatively prime number of N. **b** is integer number between 0 and N. <br/>
+Because obfuscating system was implemented with c++ metaprogramming, **a string literal cannot be easily found in decompiled source code**.
 
 
 
