@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../obfuscator.hpp"
+#include "../include/obfuscator.hpp"
 
 using namespace std;
 
