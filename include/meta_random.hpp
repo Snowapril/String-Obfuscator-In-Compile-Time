@@ -1,8 +1,6 @@
 #ifndef META_RANDOM_HPP
 #define META_RANDOM_HPP
 
-#include <limits>
-
 namespace snowapril {
 
     constexpr int DigitToInt(char c) {
@@ -25,7 +23,7 @@ namespace snowapril {
     template <int N>
     struct MetaRandomEngine {
     private:
-        static constexpr unsigned int MAX_VALUE = std::numeric_limits<unsigned int>::max();
+        static constexpr unsigned int MAX_VALUE = 4294967295;
     public:
         static constexpr unsigned int value = MAX_VALUE * MetaRandomEngine<N - 1>::value;
     };
