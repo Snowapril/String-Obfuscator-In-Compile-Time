@@ -1,5 +1,5 @@
 # String Obfuscator in Compile Time
-###### C++ String Obfuscator using Metaprogramming.
+##### C++ String Obfuscator using Metaprogramming.
 **Affine Cipher** Cryptosystem is used for both encryption and decryption.
 
 ## How to use
@@ -28,8 +28,7 @@ Because obfuscating system was implemented with c++ metaprogramming, a string li
 
 
 
-### Before Obfuacating
-**Compile options : -O3 -march=native -fPIC -g**
+##### Before Obfuacating (Compile options : -O3 -march=native -fPIC -g)
 
 ``` c++
 #include <iostream>
@@ -60,8 +59,7 @@ End of assembler dump.
 >> 0x405064 <_Jv_RegisterClasses+4214884>: "snowapril"
 ```
 
-### After Obfuscating
-**Compile options : -O3 -march=native -fPIC -g**
+##### After Obfuscating (Compile options : -O3 -march=native -fPIC -g)
 
 ``` c++
 #include <iostream>
