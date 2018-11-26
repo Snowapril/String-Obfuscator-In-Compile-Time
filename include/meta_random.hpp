@@ -12,12 +12,12 @@ namespace snowapril {
 	constexpr int RandomSeed(void) {
 		constexpr char time[] = __TIME__;
 
-		constexpr int seed = DigitToInt(time[7]) 			+
- 							 DigitToInt(time[6]) * 10 		+
- 							 DigitToInt(time[4]) * 60 		+
- 							 DigitToInt(time[3]) * 600 		+
- 							 DigitToInt(time[1]) * 3600 	+
- 							 DigitToInt(time[0]) * 36000;
+		constexpr int seed = DigitToInt(time[7]) 		+
+ 					DigitToInt(time[6]) * 10 	+
+ 					DigitToInt(time[4]) * 60 	+
+ 					DigitToInt(time[3]) * 600 	+
+ 					DigitToInt(time[1]) * 3600 	+
+ 					DigitToInt(time[0]) * 36000;
 
 		return seed;
 	};
