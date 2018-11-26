@@ -31,13 +31,14 @@ Because obfuscating system was implemented with c++ metaprogramming, a string li
 ### Before Obfuacating
 **Compile options : -O3 -march=native -fPIC -g**
 
-```
+``` c++
 #include <iostream>
 int main(void) {
 	std::cout << "snowapril" << std::endl;
     return 0;
 }
-
+```
+``` assembly
 Dump of assembler code for function main():
    0x00403b90 <+0>:     push   %ebp
    0x00403b91 <+1>:     mov    %esp,%ebp
@@ -62,14 +63,15 @@ End of assembler dump.
 ### After Obfuscating
 **Compile options : -O3 -march=native -fPIC -g**
 
-``` assembly
+``` c++
 #include <iostream>
 #include "obfuscator.hpp"
 int main(void) {
 	std::cout << OBFUSCATE("snowapril") << std::endl;
     return 0;
 }
-
+```
+``` assembly
 Dump of assembler code for function main():
    0x00403b90 <+0>:     push   %ebp
    0x00403b91 <+1>:     mov    %esp,%ebp
