@@ -32,11 +32,6 @@ namespace snowapril {
 		return (a % n + n) % n;
 	}
 
-	template <int Limit>
-	struct MetaRandomIndex {
-		enum { value = RandomSeed() % Limit };
-	};
-
 	template <typename Indexes, int A, int B>
 	class MetaString;
 
@@ -63,8 +58,8 @@ namespace snowapril {
 
 
 #define OBFUSCATE(str) (snowapril::MetaString<std::make_index_sequence<sizeof(str) - 1>, \
-											  std::get<MetaRandom<__COUNTER__, 31>::value>(PrimeNumbers), \
-											  MetaRandom<__COUNTER__, 127>::value>(str).decrypt())
+					      std::get<MetaRandom<__COUNTER__, 31>::value>(PrimeNumbers), \
+					      MetaRandom<__COUNTER__, 127>::value>(str).decrypt())
 
 }
 
