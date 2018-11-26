@@ -19,7 +19,7 @@ int main(void) {
 
 ## Features
 
-Affine Cipher is a type of monoalphabetic substitution cipher.
+Affine Cipher is a type of monoalphabetic substitution cipher. <br/>
 **E(A) = (a * A + b) % N.** <br/>
 **D(A) = a^-1 (A - b) % N** <br/>
 
