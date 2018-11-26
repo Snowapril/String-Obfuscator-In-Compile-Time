@@ -33,7 +33,7 @@ Because obfuscating system was implemented with c++ metaprogramming, a string li
 ``` c++
 #include <iostream>
 int main(void) {
-	std::cout << "snowapril" << std::endl;
+    std::cout << "snowapril" << std::endl;
     return 0;
 }
 ```
@@ -65,7 +65,7 @@ End of assembler dump.
 #include <iostream>
 #include "obfuscator.hpp"
 int main(void) {
-	std::cout << OBFUSCATE("snowapril") << std::endl;
+    std::cout << OBFUSCATE("snowapril") << std::endl;
     return 0;
 }
 ```
