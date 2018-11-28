@@ -12,7 +12,7 @@ Wrapping string literals using	 OBFUSCATE macro prevents string literals appeari
 #include "obfuscator.hpp"
 
 int main(void) { 
-	std::cout << OBFUSCATOR("Private Key") << std::endl;
+	std::cout << OBFUSCATE("Private Key") << std::endl;
 	return 0;
 }
 ```
