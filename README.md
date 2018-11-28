@@ -1,6 +1,6 @@
 # String Obfuscator in Compile Time
 ##### C++ String Obfuscator using Metaprogramming.
-**Affine Cipher** Cryptosystem is used for both encryption and decryption.
+Wrapping string literals using	 OBFUSCATE macro prevents string literals appearing in object files as it is. Actually, it is not impossible to figure obfuscated codes out, but obfuscating makes reverse-engineering difficult and time-consuming. 
 
 ## How to use
 
