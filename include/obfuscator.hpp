@@ -58,7 +58,7 @@ namespace snowapril {
 }
 
 #define OBFUSCATE(str) (snowapril::MetaString<std::make_index_sequence<sizeof(str) - 1>, \
-					      std::get<MetaRandom<__COUNTER__, 31>::value>(PrimeNumbers), \
-					      MetaRandom<__COUNTER__, 127>::value>(str).decrypt())
+					      std::get<snowapril::MetaRandom<__COUNTER__, 31>::value>(snowapril::PrimeNumbers), \
+					      snowapril::MetaRandom<__COUNTER__, 127>::value>(str).decrypt())
 
 #endif

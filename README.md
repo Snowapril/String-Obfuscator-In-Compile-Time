@@ -19,15 +19,6 @@ int main(void) {
 
 ## Features
 
-Affine Cipher is a type of monoalphabetic substitution cipher. <br/>
-**E(A) = (a * A + b) % N.** <br/>
-**D(A) = a^-1 (A - b) % N** <br/>
-
-**a** is relatively prime number of N. **b** is integer number between 0 and N. <br/>
-Because obfuscating system was implemented with c++ metaprogramming, **a string literal cannot be easily found in decompiled source code**.
-
-
-
 ##### Before Obfuacating (Compile options : -O3 -march=native -fPIC -g)
 
 ``` c++
@@ -78,16 +69,16 @@ Dump of assembler code for function main():
    0x00403b99 <+9>:     call   0x4019c0 <__main>
    0x00403b9e <+14>:    lea    0x10(%esp),%eax
    0x00403ba2 <+18>:    movl   $0x408258,(%esp)
-   0x00403ba9 <+4>:     movl   $0x77,0x1c(%esp)
-   0x00403bb1 <+12>:    movl   $0x4e,0x20(%esp)
-   0x00403bb9 <+20>:    movl   $0xa,0x24(%esp)
+   0x00403ba9 <+4>:     movl   $0x4,0x1c(%esp)
+   0x00403bb1 <+12>:    movl   $0x10,0x20(%esp)
+   0x00403bb9 <+20>:    movl   $0x27,0x24(%esp)
    0x00403bc1 <+28>:    mov    %eax,0x4(%esp)
-   0x00403bc5 <+32>:    movl   $0x65,0x28(%esp)
-   0x00403bcd <+40>:    movl   $0x49,0x2c(%esp)
-   0x00403bd5 <+48>:    movl   $0x45,0x30(%esp)
-   0x00403bdd <+56>:    movl   $0x3c,0x34(%esp)
-   0x00403be5 <+64>:    movl   $0x25,0x38(%esp)
-   0x00403bed <+72>:    movl   $0x57,0x3c(%esp)
+   0x00403bc5 <+32>:    movl   $0x60,0x28(%esp)
+   0x00403bcd <+40>:    movl   $0x62,0x2c(%esp)
+   0x00403bd5 <+48>:    movl   $0x3e,0x30(%esp)
+   0x00403bdd <+56>:    movl   $0x6c,0x34(%esp)
+   0x00403be5 <+64>:    movl   $0x1c,0x38(%esp)
+   0x00403bed <+72>:    movl   $0x61,0x3c(%esp)
    0x00403bf5 <+80>:    movb   $0x73,0x10(%esp)
    0x00403bfa <+85>:    movb   $0x6e,0x11(%esp)
    0x00403bff <+90>:    movb   $0x6f,0x12(%esp)
@@ -106,9 +97,6 @@ Dump of assembler code for function main():
    0x00403c37 <+146>:   ret
 End of assembler dump.
 ```
-
-## TODO
-Meta random header file is not complete yet. generating random numbers in compile time with c++ metaprogramming will be implemented later.
 
 ## Reference
 largely referenced on https://github.com/andrivet/ADVobfuscator
