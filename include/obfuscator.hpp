@@ -35,6 +35,9 @@ namespace snowapril {
 	template <typename Indexes, int A, int B>
 	class MetaString;
 
+#include <iostream>
+using namespace std;
+
 	template <unsigned int... I, int A, int B>
 	class MetaString<std::index_sequence<I...>, A, B> {
 	public:
@@ -46,6 +49,7 @@ namespace snowapril {
 				buffer[i] = decrypt(encrypted_buffer[i]);
 			}
 			buffer[sizeof...(I)] = 0;
+			cout << "A : " << A << ", B : " << B << endl;
 			return buffer;
 		}
 	private:
@@ -58,7 +62,7 @@ namespace snowapril {
 }
 
 #define OBFUSCATE(str) (snowapril::MetaString<std::make_index_sequence<sizeof(str) - 1>, \
-					      std::get<snowapril::MetaRandom<__COUNTER__, 31>::value>(snowapril::PrimeNumbers), \
-					      snowapril::MetaRandom<__COUNTER__, 127>::value>(str).decrypt())
+					      std::get<snowapril::MetaRandom<__COUNTER__, 30>::value>(snowapril::PrimeNumbers), \
+					      snowapril::MetaRandom<__COUNTER__, 126>::value>(str).decrypt())
 
 #endif
