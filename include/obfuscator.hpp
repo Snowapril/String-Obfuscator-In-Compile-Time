@@ -4,6 +4,7 @@
 #include <array>
 #include "meta_random.hpp"
 
+#include <string_view>
 
 namespace snowapril {
 
@@ -35,10 +36,11 @@ namespace snowapril {
 	template <typename Indexes, int A, int B>
 	class MetaString;
 
-	template <unsigned int... I, int A, int B>
+	template <size_t... I, int A, int B>
 	class MetaString<std::index_sequence<I...>, A, B> {
 	public:
-		constexpr MetaString(const char* str)
+		template <typename String>
+		constexpr MetaString(String const& str)
 			: encrypted_buffer{ encrypt(str[I])... } {};
 	public:
 		inline const char* decrypt(void) {
@@ -49,16 +51,20 @@ namespace snowapril {
 			return buffer;
 		}
 	private:
-		constexpr int encrypt(char c) { return (A*(c)+B) % 127; } ;
+		constexpr int  encrypt(char c) { return (A*(c)+B) % 127; } ;
 		constexpr char decrypt(int c) { return positive_modulo((ExtendedEuclidian<127, A>::y ) *(c-B), 127); } ;
 	private:
-		char buffer[sizeof...(I) + 1];
-		int  encrypted_buffer[sizeof...(I)];
+		char buffer[sizeof...(I) + 1] {};
+		int  encrypted_buffer[sizeof...(I)] {};
 	};
 }
 
+#define TEST(str) (snowapril::MetaString<std::make_index_sequence<sizeof(str) - 1>, \
+					      std::get<snowapril::MetaRandom<__COUNTER__, 30>::value>(snowapril::PrimeNumbers), \
+					      snowapril::MetaRandom<__COUNTER__, 126>::value>(std::string_view(str)))
+
 #define OBFUSCATE(str) (snowapril::MetaString<std::make_index_sequence<sizeof(str) - 1>, \
 					      std::get<snowapril::MetaRandom<__COUNTER__, 30>::value>(snowapril::PrimeNumbers), \
-					      snowapril::MetaRandom<__COUNTER__, 126>::value>(str).decrypt())
+					      snowapril::MetaRandom<__COUNTER__, 126>::value>(std::string_view(str)).decrypt())
 
 #endif
