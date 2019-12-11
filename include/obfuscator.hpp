@@ -48,8 +48,8 @@ namespace snowapril {
 			return buffer;
 		}
 	private:
-		constexpr int  encrypt(char c) { return (A*(c)+B) % 127; } ;
-		constexpr char decrypt(int c) { return positive_modulo((ExtendedEuclidian<127, A>::y ) *(c-B), 127); } ;
+		constexpr int  encrypt(char c) const { return (A * c + B) % 127; } ;
+		constexpr char decrypt(int c) const { return positive_modulo(ExtendedEuclidian<127, A>::y * (c - B), 127); } ;
 	private:
 		char buffer[sizeof...(I) + 1] {};
 		int  encrypted_buffer[sizeof...(I)] {};

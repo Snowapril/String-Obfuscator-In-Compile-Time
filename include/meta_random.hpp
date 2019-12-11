@@ -4,23 +4,15 @@
 #include <limits>
 
 namespace snowapril {
-
-    constexpr int DigitToInt(char c) {
-		return c - '0';
-	};
-
-	constexpr int RandomSeed(void) {
-		constexpr char time[] = __TIME__;
-
-		constexpr int seed = DigitToInt(time[7]) 		+
- 				     DigitToInt(time[6]) * 10 		+
-				     DigitToInt(time[4]) * 60 		+
-				     DigitToInt(time[3]) * 600 		+
-				     DigitToInt(time[1]) * 3600 	+
-				     DigitToInt(time[0]) * 36000;
-
-		return seed;
-	};
+    constexpr int RandomSeed(void) {
+        return '0'      * -40271 + // offset accounting for digits' ANSI offsets
+            __TIME__[7] *      1 +
+            __TIME__[6] *     10 +
+            __TIME__[4] *     60 +
+            __TIME__[3] *    600 +
+            __TIME__[1] *   3600 +
+            __TIME__[0] *  36000;
+    };
 
     template <unsigned int a,
               unsigned int c,
